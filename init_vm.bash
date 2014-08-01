@@ -6,7 +6,10 @@ apt-get update
 echo "mysql-server-5.5 mysql-server/root_password password root" | debconf-set-selections
 echo "mysql-server-5.5 mysql-server/root_password_again password root" | debconf-set-selections
 
-apt-get install -y apache2 php5-gd php5-sqlite php5 php5-cli php5-mysql mysql-server php-db php-pear
+apt-get install -y build-essential apache2 php5-gd php5-sqlite php5 php5-cli php5-mysql mysql-server php-db php-pear
+
+pecl install uploadprogress
+echo "extension=uploadprogress.so" > /etc/php5/apache2/conf.d/uploadprogress.ini
 
 rm -rf /var/www
 ln -fs /vagrant/www /var/www
