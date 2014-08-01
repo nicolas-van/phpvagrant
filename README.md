@@ -1,4 +1,4 @@
-Some vagrant configuration fiel to initialize a default environment suitable for most PHP applications with apache and
+Some vagrant configuration file to initialize a default environment suitable for most PHP applications with apache and
 mysql.
 
 The `/var/www` folder will be redirected to `./www` .
