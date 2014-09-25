@@ -10,6 +10,8 @@ apt-get install -y build-essential apache2 php5-gd php5-sqlite php5 php5-cli php
 
 pecl install uploadprogress
 echo "extension=uploadprogress.so" > /etc/php5/apache2/conf.d/uploadprogress.ini
+a2enmod rewrite
+sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/sites-available/default
 
 rm -rf /var/www
 ln -fs /vagrant/www /var/www
