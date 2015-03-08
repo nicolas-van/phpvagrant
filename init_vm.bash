@@ -10,11 +10,11 @@ apt-get install -y build-essential apache2 php5-gd php5-sqlite php5 php5-cli php
 
 pecl install uploadprogress
 echo "extension=uploadprogress.so" > /etc/php5/apache2/conf.d/uploadprogress.ini
-sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/sites-available/default
+cp /vagrant/000-default.conf /etc/apache2/sites-available/000-default.conf
+chown root:root /etc/apache2/sites-available/000-default.conf
+cp /vagrant/apache2.conf /etc/apache2/apache2.conf
+chown root:root /etc/apache2/apache2.conf
 a2enmod rewrite
-
-rm -rf /var/www
-ln -fs /vagrant/www /var/www
 
 # some default database for mysql
 mysql -uroot -proot -e "create database if not exists defaultdb"
