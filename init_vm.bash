@@ -14,6 +14,8 @@ cp /vagrant/000-default.conf /etc/apache2/sites-available/000-default.conf
 chown root:root /etc/apache2/sites-available/000-default.conf
 cp /vagrant/apache2.conf /etc/apache2/apache2.conf
 chown root:root /etc/apache2/apache2.conf
+cp /vagrant/mpm_prefork.conf /etc/apache2/mods-available/mpm_prefork.conf
+chown root:root /etc/apache2/mods-available/mpm_prefork.conf
 a2enmod rewrite
 
 # some default database for mysql
