@@ -22,3 +22,6 @@ a2enmod rewrite
 mysql -uroot -proot -e "create database if not exists defaultdb"
 
 service apache2 restart
+
+DEBIAN_FRONTEND=noninteractive apt-get install postfix
+apt-get install mailutils
